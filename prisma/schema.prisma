@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model games {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  apiKey            String?
+  beaten            Boolean?
+  bought            Boolean
+  /// Multiple data types found: String: 80.2%, Float: 19.8% out of 368 sampled entries
+  boughtDate        Json?
+  estimatedBeatTime Int?
+  mainImage         String
+  platform          String
+  title             String
+}
+
+model logs {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  boughtDate Float
+  mainImage  String
+  platform   String
+  title      String
+}
