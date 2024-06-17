@@ -12,12 +12,12 @@ model games {
   apiKey            String?
   beaten            Boolean?
   bought            Boolean
-  /// Multiple data types found: String: 80.2%, Float: 19.8% out of 368 sampled entries
-  boughtDate        Json?
+  boughtDate        DateTime?
   estimatedBeatTime Int?
   mainImage         String
   platform          String
   title             String
+  user              String?
 }
 
 model logs {
