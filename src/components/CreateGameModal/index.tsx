@@ -39,7 +39,7 @@ async function CreateGameModal() {
           boughtDate,
           platform,
           beaten,
-          user: session.user?.email
+          user: session?.user?.email
         }
       })
       console.log("got here")
